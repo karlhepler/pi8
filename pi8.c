@@ -19,8 +19,8 @@
 #include <math.h>
 
 #define BASE 8
-#define PRECISION (BASE*2)
-#define NUM_DIGITS 10
+#define PRECISION 512
+#define NUM_DIGITS 8
 
 /* uncomment the following line to use 'long long' integers */
 /* #define HAS_LONG_LONG */
@@ -171,10 +171,7 @@ int main(int argc, char *argv[])
 	sum = fmod(sum + (double) s / (double) av, 1.0);
     }
 
-    printf(
-	"Octal digits of pi at position %d: %o\n", n,
-    	(int) (sum * pow(BASE, NUM_DIGITS))
-    );
+    printf("%o\n", (int) (sum * pow(BASE, NUM_DIGITS)));
 
     return 0;
 }
